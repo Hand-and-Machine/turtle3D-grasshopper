@@ -4,7 +4,7 @@ A Python library implementing 3D graphics in a way that can be used within [Gras
 
 ## Installing
 
-Download the turtle3D.py script and place it somewhere on your computer, in a folder by itself.
+Download [the turtle3D.py script](https://git.sr.ht/~boringcactus/turtle3D-grasshopper/blob/main/turtle3D.py) and place it somewhere on your computer, in a folder by itself.
 Then open Rhino, go to Tools > PythonScript > Edit..., go to Tools > Options, and in the Files tab, under Module Search Paths, click the "Add to search path" button, and then find the folder you put turtle3D.py in.
 
 ## Using

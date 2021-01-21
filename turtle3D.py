@@ -1,3 +1,4 @@
+import math
 import rhinoscriptsyntax as rs
 
 __all__ = ['Turtle']
@@ -82,14 +83,14 @@ class Turtle:
     def zcor(self):
         return self._position.Z
 
-    def pitch(self):
-        pass # uhhhhhhhhhhh
+    def tilt(self):
+        return math.degrees(math.atan2(self._forward.Z, math.sqrt(self._forward.X ** 2 + self._forward.Y ** 2)))
 
-    def yaw(self):
-        pass # uhhhhhhhhhhhhhhhhhhhhhh
+    def turn(self):
+        return math.degrees(math.atan2(self._forward.X, self._forward.Y))
 
-    def roll(self):
-        pass # uhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    def spin(self):
+        return math.degrees(math.atan2(self._right.Z, math.sqrt(self._right.X ** 2 + self._right.Y ** 2)))
 
     def pendown(self):
         self._pen_down = True

@@ -20,8 +20,32 @@ forward(10)
 right(45)
 forward(12)
 right(90 + 45)
+tiltdown(30)
 forward(20)
 a = lines()
+```
+
+This will create a turtle automatically, provide it the given instructions, and output the lines it has drawn to the `a` output of the Python node.
+
+**Important**: If you omit the call to `home()` at the start of the code, you will get a `NullReferenceException` when the Python node runs for a second time.
+I do not know why this happens, but I believe it has something to do with the fact that the implicitly-created turtle is persisted between runs of the Python node.
+
+## Multiple Turtles
+
+If you wish to create turtles explicitly, or you wish to keep imported names to a minimum to avoid name collisions, this code will have the same effect as the above code:
+
+```python2
+from turtle3D import Turtle
+
+turtle = Turtle()
+turtle.pendown()
+turtle.forward(10)
+turtle.right(45)
+turtle.forward(12)
+turtle.right(90 + 45)
+turtle.tiltdown(30)
+turtle.forward(20)
+a = turtle.lines()
 ```
 
 ## License

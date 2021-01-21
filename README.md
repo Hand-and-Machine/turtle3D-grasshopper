@@ -14,6 +14,7 @@ Add the following script to a Grasshopper Python node:
 ```python2
 from turtle3D import *
 
+home()
 pendown()
 forward(10)
 right(45)

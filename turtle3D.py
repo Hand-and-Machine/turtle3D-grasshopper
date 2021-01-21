@@ -59,14 +59,14 @@ class Turtle:
     def setz(self, z):
         self.setpos(self._position.X, self._position.Y, z)
 
-    def setpitch(self, angle):
-        pass # uhhhhhh
+    #def settilt(self, angle):
+    #    pass # uhhhhhh
 
-    def setyaw(self, angle):
-        pass # uhhhhhh
+    #def setturn(self, angle):
+    #    pass # uhhhhhh
 
-    def setroll(self, angle):
-        pass # uhhhhhhh
+    #def setspin(self, angle):
+    #    pass # uhhhhhhh
 
     def home(self):
         self.__init__()

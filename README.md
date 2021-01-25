@@ -48,6 +48,10 @@ turtle.forward(20)
 a = turtle.lines()
 ```
 
+## Full Tutorial
+
+I've also written a [full tutorial for this library](https://git.sr.ht/~boringcactus/turtle3D-grasshopper/tree/main/item/tutorial.md).
+
 ## License
 
 This library is released under the terms of the [Anti-Capitalist Software License](https://anticapitalist.software) v1.4.

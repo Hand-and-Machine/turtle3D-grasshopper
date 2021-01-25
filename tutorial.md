@@ -42,7 +42,7 @@ Assumes you've already [installed turtle3D for Grasshopper](https://git.sr.ht/~b
     Connect the output to the Seed inputs of each of the random number generators created previously.
 16. Add a Solid Union (Intersect > Shape) pulling input from the Pipe created earlier.
     Right-click the output of the Pipe and set it to "Flatten".
-    
+
 Now you should have a funky bowl that is randomly generated based on the seed settings you use!
 It won't look much like a bowl when your iterations slider is below 10 (and even then it's a stretch), but by that point your computer will have a hard time keeping up with you if you're fine-tuning your parameters.
 For me, at least, the bottleneck was actually the Pipe node, so you might want to use a Trigger node or right-click and disable it while you're playing with your sliders.

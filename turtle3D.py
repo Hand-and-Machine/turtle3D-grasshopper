@@ -10,6 +10,7 @@ class Turtle:
         self._forward = rs.CreateVector(0, 1, 0)
         self._right = rs.CreateVector(1, 0, 0)
         self._position = rs.CreatePoint(0, 0, 0)
+        self._this_line = []
         self._lines = []
         self._pen_down = False
 
@@ -17,7 +18,7 @@ class Turtle:
         """Moves the turtle forward by the given distance. If the pen is down, adds a line along the path moved."""
         new_position = rs.PointAdd(self._position, rs.VectorScale(self._forward, distance))
         if self._pen_down:
-            self._lines.append(rs.AddLine(self._position, new_position))
+            self._this_line.append(new_position)
         self._position = new_position
 
     def backward(self, distance):
@@ -61,7 +62,7 @@ class Turtle:
             z = 0
         new_position = rs.CreatePoint(x, y, z)
         if self._pen_down:
-            self._lines.append([self._position, new_position])
+            self._this_line.append(new_position)
         self._position = new_position
 
     def setx(self, x):
@@ -120,13 +121,20 @@ class Turtle:
     def pendown(self):
         """Puts the turtle's pen down, so it starts drawing lines."""
         self._pen_down = True
+        if len(self._this_line) == 0:
+            self._this_line.append(self._position)
 
     def penup(self):
         """Lifts the turtle's pen up, so it stops drawing lines."""
         self._pen_down = False
+        if len(self._this_line) > 1:
+            self._lines.append(rs.AddPolyline(self._this_line))
+            self._this_line = []
 
     def lines(self):
-        """Gets the list of lines the turtle has drawn."""
+        """Gets the list of (poly)lines the turtle has drawn."""
+        if self._pen_down:
+            self.penup()
         return list(self._lines)
 
 _implicit_turtle = Turtle()

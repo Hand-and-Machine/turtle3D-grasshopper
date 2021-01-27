@@ -6,13 +6,19 @@ Assumes you've already [installed turtle3D for Grasshopper](https://git.sr.ht/~b
 2.  Add a slider "turn" over the real numbers ranging from 0.1 to 45.0.
 3.  Add a slider "tilt" over the real numbers ranging from 0.1 to 45.0.
 
+![](doc/01.png)
+
 4.  Create a domain from -turn to turn.
 5.  Create a domain from tilt-1 to tilt+1.
 6.  Create a slider "steps" over the integers ranging from 2 to 50.
 
+![](doc/02.png)
+
 7.  Generate random numbers (Sets > Sequence > Random) with a range based on "turn" and a number set to "steps".
 8.  Generate random numbers with a range based on "tilt" and a number set to "steps".
 9.  Generate a random number with a range set to "0 To 360" (leave the number at 1).
+
+![](doc/03.png)
 
 10. Add a Python node.
     Give it four inputs: `move`, `first_turn`, `turns`, and `tilts`.
@@ -32,9 +38,15 @@ Assumes you've already [installed turtle3D for Grasshopper](https://git.sr.ht/~b
     a = lines()
     ```
 
+![](doc/04a.png)
+![](doc/04b.png)
+
 11. Add a slider "radius" over the real numbers
  ranging from 0.100 to 5.000.
 12. Make a Pipe (Surface > Freeform) with the curve coming from the Python node's `a` output, the radius coming from the slider, and the caps set to Round (right-click the E input to set that).
+
+![](doc/05a.png)
+![](doc/05b.png)
 
 13. Add a slider "first seed" over the integers ranging from 0 to 100.
 14. Add a slider "iterations" over the integers ranging from 2 to 100.
@@ -42,6 +54,9 @@ Assumes you've already [installed turtle3D for Grasshopper](https://git.sr.ht/~b
     Connect the output to the Seed inputs of each of the random number generators created previously.
 16. Add a Solid Union (Intersect > Shape) pulling input from the Pipe created earlier.
     Right-click the output of the Pipe and set it to "Flatten".
+
+![](doc/06a.png)
+![](doc/06b.png)
 
 Now you should have a funky bowl that is randomly generated based on the seed settings you use!
 It won't look much like a bowl when your iterations slider is below 10 (and even then it's a stretch), but by that point your computer will have a hard time keeping up with you if you're fine-tuning your parameters.

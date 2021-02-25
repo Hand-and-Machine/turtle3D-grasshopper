@@ -1,6 +1,6 @@
 # Making a Procedurally Generated Bowl with turtle3D for Grasshopper
 
-Assumes you've already [installed turtle3D for Grasshopper](https://git.sr.ht/~boringcactus/turtle3D-grasshopper#installing) and you're familiar with intermediate Grasshopper features like input expressions.
+Assumes you've already [installed turtle3D for Grasshopper](https://github.com/Hand-and-Machine/turtle3D-grasshopper#installing) and you're familiar with intermediate Grasshopper features like input expressions.
 
 1.  Add a slider "move" over the real numbers ranging from 0.1 to 5.0.
 2.  Add a slider "turn" over the real numbers ranging from 0.1 to 45.0.
